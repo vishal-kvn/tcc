@@ -1,0 +1,26 @@
+<%= form_tag root_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@latitude}%2C#{@longitude}" %>
+
+<h1>
+	Weather at <%= clocation %>
+</h1>
+
+<p>
+	<ul>
+		<li>
+			Temperate - <%= @weather["temperature"]["value"] rescue "not available"%>C
+		</li>
+		<li>
+			Humidity - <%= @weather["humidity"]["value"] rescue "not available"%>%
+		</li>
+		<li>
+			Cloudiness - <%= @weather["cloudiness"]["percent"] rescue "not available"%>%
+		</li>
+	</ul>
+</p>
