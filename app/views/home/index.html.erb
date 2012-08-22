@@ -8,7 +8,7 @@
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@latitude}%2C#{@longitude}" %>
 
 <h1>
-	Weather at <%= clocation %>
+	Weather at <%= @location || "Undisclosed Location" %>
 </h1>
 
 <p>
